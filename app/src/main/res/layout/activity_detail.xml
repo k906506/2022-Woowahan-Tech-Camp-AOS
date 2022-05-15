@@ -6,4 +6,182 @@
     android:layout_height="match_parent"
     tools:context=".activity.DetailActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/menuImageView"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/menuTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/menuDescriptionTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/menuImageView" />
+
+            <TextView
+                android:id="@+id/menuDescriptionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                app:layout_constraintBottom_toTopOf="@id/firstLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menuTitleTextView" />
+
+            <View
+                android:id="@+id/firstLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toTopOf="@id/menuPriceTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menuDescriptionTextView" />
+
+            <TextView
+                android:id="@+id/menuPriceTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="12dp"
+                android:text="@string/menu_price"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/priceRecyclerView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstLine" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/priceRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="12dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/secondLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menuPriceTextView"
+                tools:listitem="@layout/item_menu_price" />
+
+            <View
+                android:id="@+id/secondLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceRecyclerView" />
+
+            <TextView
+                android:id="@+id/optionTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginVertical="24dp"
+                android:text="@string/menu_option"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondLine" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/optionRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_margin="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/optionTextView"
+                tools:listitem="@layout/item_menu_option" />
+
+            <View
+                android:id="@+id/thirdLine"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginVertical="20dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toTopOf="@+id/cautionTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/optionRecyclerView" />
+
+            <TextView
+                android:id="@+id/cautionTextView"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="메뉴 사진은 연출된 이미지로 실제 조리된 음식과 다를 수 있습니다."
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/thirdLine" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView">
+
+        <TextView
+            android:id="@+id/minOrderPriceView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            tools:text="최소주문금액" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="담기" />
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
