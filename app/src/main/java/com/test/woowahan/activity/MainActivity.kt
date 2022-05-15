@@ -58,7 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun startDetailActivity(menus: Menus) {
         val intent = Intent(this@MainActivity, DetailActivity::class.java)
-        intent.putExtra("data", menus)
+        intent.putExtra("url", menus.images?.get(0)?.url)
+        // Serialized 오류 발생
+        // intent.putExtra("data", menus)
         startActivity(intent)
     }
 
@@ -71,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             val bitmap = ImageDownloadManager.getImage(
                 shopInfo?.headerImages?.get(0)?.url
-                    ?: "https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939_1280.jpg"
+                    ?: ""
             )
             withContext(Dispatchers.Main) {
                 shopImageView.setImageBitmap(bitmap)
