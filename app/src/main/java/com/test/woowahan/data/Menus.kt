@@ -1,6 +1,7 @@
 package com.test.woowahan.data
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Menus(
     @SerializedName("franchisePromotionId") val franchisePromotionId: Int = -1,
@@ -14,4 +15,4 @@ data class Menus(
     @SerializedName("badges") val badges: List<Badges>? = null,
     @SerializedName("menuPrices") val menuPrices: List<MenuPrices>,
     @SerializedName("optionGroups") val optionGroups: List<OptionGroups>? = null
-)
+) : Serializable
