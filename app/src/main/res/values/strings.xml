@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Woowahan</string>
+    <string name="call">전화걸기</string>
+    <string name="min_price">최소주문금액</string>
+    <string name="depart_time">도착예정시간</string>
+    <string name="tip">배달팁</string>
+    <string name="menu_price">가격</string>
+    <string name="menu_option">추가선택 (최대 3개)</string>
 </resources>
