@@ -172,7 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="12dp"
-            tools:text="최소주문금액" />
+            android:text="최소주문금액" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
